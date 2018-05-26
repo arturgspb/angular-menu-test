@@ -1,19 +1,19 @@
 
 import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyDashComponent } from './my-dash.component';
+import { AppNavComponent } from './app-nav.component';
 
-describe('MyDashComponent', () => {
-  let component: MyDashComponent;
-  let fixture: ComponentFixture<MyDashComponent>;
+describe('AppNavComponent', () => {
+  let component: AppNavComponent;
+  let fixture: ComponentFixture<AppNavComponent>;
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyDashComponent ]
+      declarations: [ AppNavComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MyDashComponent);
+    fixture = TestBed.createComponent(AppNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   template: `
-
-    <mat-vertical-stepper>
-      <mat-step label="Step 1">
-        Content 1
-      </mat-step>
-      <mat-step label="Step 1">
-        Content 2
-        <my-table></my-table>
-      </mat-step>
-    </mat-vertical-stepper>
+    <div>
+      <div id="embed-page"></div>
+    </div>
   `
 })
-export class PageComponent {}
+
+export class PageComponent implements OnInit {
+  ngOnInit(): void {
+    me('load', 'embed-page', {
+      appId: 58,
+      pageId: 3203,
+      sizeBy: 'content'
+    });
+  }
+
+}
 

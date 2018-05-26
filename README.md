@@ -29,6 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 examples:
 
+ng generate @angular/material:material-nav --name=app-nav
+
 https://stackblitz.com/angular/vbynqbgxyjk?file=src%2Fapp%2Fapp.module.ts
 
 https://angular.io/guide/dynamic-form

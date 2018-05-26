@@ -15,13 +15,11 @@ import {
   MatCardModule,
   MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatVerticalStepper
 } from '@angular/material';
-import {MyDashComponent} from './my-dash/my-dash.component';
-import {MyTableComponent} from './my-table/my-table.component';
-import {MainNavComponent} from './main-nav/main-nav.component';
 import {PageNotFoundComponent} from './not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PageComponent} from './page.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import { AppNavComponent } from './app-nav/app-nav.component';
 
 
 const appRoutes: Routes = [
@@ -40,11 +38,9 @@ const appRoutes: Routes = [
   // ],
   declarations: [
     AppComponent,
-    MyDashComponent,
-    MyTableComponent,
-    MainNavComponent,
     PageNotFoundComponent,
-    PageComponent
+    PageComponent,
+    AppNavComponent
   ],
   imports: [
     RouterModule.forRoot(
