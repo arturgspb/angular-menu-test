@@ -1,16 +1,78 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {LayoutModule} from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatVerticalStepper
+} from '@angular/material';
+import {MyDashComponent} from './my-dash/my-dash.component';
+import {MyTableComponent} from './my-table/my-table.component';
+import {MainNavComponent} from './main-nav/main-nav.component';
+import {PageNotFoundComponent} from './not-found.component';
+import {RouterModule, Routes} from '@angular/router';
+import {PageComponent} from './page.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
-import { AppComponent } from './app.component';
+
+const appRoutes: Routes = [
+  {
+    path: 'page',
+    component: PageComponent,
+    data: {title: 'Heroes List'}
+  },
+  {path: '**', component: PageNotFoundComponent}
+];
+
 
 @NgModule({
+  // schemas: [
+  //   CUSTOM_ELEMENTS_SCHEMA
+  // ],
   declarations: [
-    AppComponent
+    AppComponent,
+    MyDashComponent,
+    MyTableComponent,
+    MainNavComponent,
+    PageNotFoundComponent,
+    PageComponent
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(
+      appRoutes,
+      {
+        enableTracing: false, // <-- debugging purposes only
+
+      }
+    ),
+    BrowserModule,
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    LayoutModule,
+    MatStepperModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
