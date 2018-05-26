@@ -30,3 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 examples:
 
 https://stackblitz.com/angular/vbynqbgxyjk?file=src%2Fapp%2Fapp.module.ts
+
+https://angular.io/guide/dynamic-form
+
+https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4
